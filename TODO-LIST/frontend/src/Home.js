@@ -14,6 +14,7 @@ const Home = () => {
   const [updatetask, setUpdatetask] = useState("");
   const [taskid, setTaskid] = useState("");
 
+  // initialize the tasks when reloads
   useEffect(() => {
     axios
       .get("http://localhost:5080/get")
@@ -64,6 +65,7 @@ const Home = () => {
         const updatedTodos = todos.filter((todo) => todo._id !== id);
         setTodos(updatedTodos);
       })
+
       .catch((err) => console.log(err));
   };
 
